@@ -4,7 +4,7 @@
 body {
   touch-action: none;
   background-size: cover;
- url('image.jpg');
+  background-image: url('image.jpg');
   background-position: center;
   background-repeat: no-repeat;
   margin: 0;
@@ -123,7 +123,7 @@ body, html {
   /* Adjust the size of the Telegram icon as needed */
 }
 
-#input-box button:hover {
+#input-box button.hovered {
   background-color: #000;
   color: #0d6a81;
 }
