@@ -47,10 +47,11 @@ if (diff <= 0) {
 
 // changing the telegram icon from black to white whenever the user moves his cursor over the button
 const contactUsBTN = document.querySelector("#input-box button");
+const tgicon = contactUsBTN.querySelector("img");
 
 contactUsBTN.addEventListener("mouseover", () => {
-  contactUsBTN.querySelector("img").src = "tgicon_white.png";
+  tgicon.src = "tgicon_white.png";
 })
 contactUsBTN.addEventListener("mouseleave", () => {
-  contactUsBTN.querySelector("img").src = "tgicon_black.png";
+  tgicon.src = "tgicon_black.png";
 })
