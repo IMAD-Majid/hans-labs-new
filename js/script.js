@@ -8,10 +8,10 @@ const diff = new Date("2024-02-25").getTime() - new Date().getTime();
 
 // when the deadline is already passed, the values are set to 0
 if (diff <= 0) {
-  seconds.textContent = 0;
-  minutes.textContent = 0;
-  hours.textContent = 0;
-  days.textContent = 0;
+  seconds.textContent = '00';
+  minutes.textContent = '00';
+  hours.textContent   = '00';
+  days.textContent    = '00';
 } else {
   // setting values of the countdown based on the difference
   let secValue = Math.floor((diff / 1000) % 60),
