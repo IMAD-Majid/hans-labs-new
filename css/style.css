@@ -7,7 +7,8 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-.container {
+
+#container {
   display: flex;
   row-gap: 15px;
   align-items: center;
@@ -17,54 +18,64 @@
   width: 100%;
   overflow: hidden;
 }
-.container .image {
+
+#container .image {
   position: absolute;
   height: 100%;
   width: 100%;
   object-fit: cover;
   z-index: -1;
 }
-.container header {
+
+#container header {
   font-size: 60px;
   color: #000;
   font-weight: 600;
   text-align: center;
 }
-.container p {
+
+#container p {
   font-size: 16px;
   font-weight: 400;
   color: #000;
   max-width: 550px;
   text-align: center;
 }
-.container .time-content {
+
+#container #time-content {
   display: flex;
   column-gap: 30px;
   align-items: center;
 }
-.time-content .time {
+
+#time-content .time {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
+
 .time .number,
 .time .text {
   font-weight: 500;
   color: #000;
 }
+
 .time .number {
   font-size: 40px;
 }
+
 .time .text {
   text-transform: capitalize;
   font-size: 12px;
 }
-.contact-us {
+
+#contact-us {
   text-align: center;
-  margin-top: 50px; /* Adjust margin as needed */
+  margin-top: 50px;
+  /* Adjust margin as needed */
 }
 
-.input-box {
+#input-box {
   display: flex;
   align-items: center;
   height: 40px;
@@ -74,7 +85,7 @@
   column-gap: 20px;
 }
 
-.input-box button {
+#input-box button {
   height: 100%;
   outline: none;
   border: none;
@@ -84,23 +95,25 @@
   font-weight: 400;
   display: flex;
   align-items: center;
-  padding: 0 20px;
+  padding: 0.25em 20px;
   color: #000;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.input-box button img {
+#input-box button img {
   margin-left: 10px;
-  width: 20px; /* Adjust the size of the Telegram icon as needed */
+  width: 20px;
+  /* Adjust the size of the Telegram icon as needed */
 }
 
-.input-box button:hover {
+#input-box button:hover {
   background-color: #000;
   color: #0d6a81;
-                         }
+}
+
 @media screen and (max-width: 300px) {
-  .container header {
+  #container header {
     font-size: 50px;
   }
 }
