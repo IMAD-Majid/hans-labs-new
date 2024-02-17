@@ -66,9 +66,11 @@
   margin-top: 30px;
   width: 100%;
 }
-.email-content p {
-  font-size: 13px;
+.contact-us {
+  text-align: center;
+  margin-top: 50px; /* Adjust margin as needed */
 }
+
 .input-box {
   display: flex;
   align-items: center;
@@ -78,7 +80,7 @@
   margin-top: 20px;
   column-gap: 20px;
 }
-.input-box input,
+
 .input-box button {
   height: 100%;
   outline: none;
@@ -87,26 +89,23 @@
   border-radius: 4px;
   background-color: rgba(255, 255, 255, 0.2);
   font-weight: 400;
-}
-.input-box input {
-  width: 100%;
-  padding: 0 15px;
-  color: #fff;
-}
-input::placeholder {
-  color: #fff;
-}
-.input-box button {
-  cursor: pointer;
-  color: #fff;
-  white-space: nowrap;
+  display: flex;
+  align-items: center;
   padding: 0 20px;
+  color: #fff;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
+
+.input-box button img {
+  margin-left: 10px;
+  width: 20px; /* Adjust the size of the Telegram icon as needed */
+}
+
 .input-box button:hover {
   background-color: #fff;
   color: #0d6a81;
-}
+                         }
 @media screen and (max-width: 300px) {
   .container header {
     font-size: 50px;
