@@ -78,3 +78,28 @@ contactUsBTN.addEventListener("mouseleave", () => {
   tgicon.src = "tgicon_black.png";
   contactUsBTN.classList.remove("hovered")
 })
+
+document.addEventListener('DOMContentLoaded', function () {
+  const flowerContainer = document.getElementById('flower-container');
+
+  document.addEventListener('touchstart', function (e) {
+    const flower = document.createElement('img');
+    flower.src = Math.random() > 0.5 ? 'flower1.png' : 'flower3.png';
+    flower.classList.add('flower');
+
+    const x = e.touches[0].clientX;
+    const y = e.touches[0].clientY;
+
+    const randomTranslateX = (Math.random() - 0.5) * 2; 
+    flower.style.setProperty('--translateX', randomTranslateX);
+
+    flower.style.left = `${x}px`;
+    flower.style.top = `${y}px`;
+
+    flowerContainer.appendChild(flower);
+
+    setTimeout(() => {
+      flower.remove();
+    }, 2000); // Remove the flower after 2 seconds
+  });
+});
