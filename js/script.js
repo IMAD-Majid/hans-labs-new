@@ -19,21 +19,19 @@ if (diff <= 0) {
     hourValue = Math.floor(diff / 1000 / 60 / 60) % 24,
     dayValue = Math.floor(diff / 1000 / 60 / 60 / 24);
 
-  const timeFunction = setInterval(() => {
+  const updateCountdown = () => {
     seconds.textContent = secValue < 10 ? `0${secValue}` : secValue;
     minutes.textContent = minValue < 10 ? `0${minValue}` : minValue;
     hours.textContent = hourValue < 10 ? `0${hourValue}` : hourValue;
     days.textContent = dayValue < 10 ? `0${dayValue}` : dayValue;
-    
+
     if (secValue === 0) {
       secValue = 60;
       if (minValue === 0) {
         minValue = 60;
         if (hourValue === 0) {
           hourValue = 24;
-          if (dayValue === 0) {
-            clearInterval(timeFunction);
-          }
+          
           dayValue--;
         }
         hourValue--;
@@ -41,6 +39,17 @@ if (diff <= 0) {
       minValue--;
     }
     secValue--;
+  }
+  // updating the countdown now to not feel a delay
+  updateCountdown()
+
+  // updatting the countdown every second
+  const timeFunction = setInterval(()=>{
+    updateCountdown()
+    // stoping the countdown update
+    if (secValue === 0 && minValue === 0 && hourValue === 0 && dayValue === 0) {
+      clearInterval(timeFunction);
+    }
   }, 1000); //1000ms = 1s
 }
 
