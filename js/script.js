@@ -10,8 +10,8 @@ const diff = new Date("2024-02-25").getTime() - new Date().getTime();
 if (diff <= 0) {
   seconds.textContent = '00';
   minutes.textContent = '00';
-  hours.textContent   = '00';
-  days.textContent    = '00';
+  hours.textContent = '00';
+  days.textContent = '00';
 } else {
   // setting values of the countdown based on the difference
   let secValue = Math.floor(diff / 1000) % 60,
@@ -19,16 +19,19 @@ if (diff <= 0) {
     hourValue = Math.floor(diff / 1000 / 60 / 60) % 24,
     dayValue = Math.floor(diff / 1000 / 60 / 60 / 24);
 
-const timeFunction = setInterval(() => {
+  const updateCountdown = () => {
+    seconds.textContent = secValue < 10 ? `0${secValue}` : secValue;
+    minutes.textContent = minValue < 10 ? `0${minValue}` : minValue;
+    hours.textContent = hourValue < 10 ? `0${hourValue}` : hourValue;
+    days.textContent = dayValue < 10 ? `0${dayValue}` : dayValue;
+
     if (secValue === 0) {
       secValue = 60;
       if (minValue === 0) {
         minValue = 60;
         if (hourValue === 0) {
           hourValue = 24;
-          if (dayValue === 0) {
-            clearInterval(timeFunction);
-          }
+          
           dayValue--;
         }
         hourValue--;
@@ -36,11 +39,17 @@ const timeFunction = setInterval(() => {
       minValue--;
     }
     secValue--;
-  
-    seconds.textContent = secValue < 10 ? `0${secValue}` : secValue;
-    minutes.textContent = minValue < 10 ? `0${minValue}` : minValue;
-    hours.textContent = hourValue < 10 ? `0${hourValue}` : hourValue;
-    days.textContent = dayValue < 10 ? `0${dayValue}` : dayValue;
+  }
+  // updating the countdown now to not feel a delay
+  updateCountdown()
+
+  // updatting the countdown every second
+  const timeFunction = setInterval(()=>{
+    updateCountdown()
+    // stoping the countdown update
+    if (secValue === 0 && minValue === 0 && hourValue === 0 && dayValue === 0) {
+      clearInterval(timeFunction);
+    }
   }, 1000); //1000ms = 1s
 }
 
@@ -48,9 +57,24 @@ const timeFunction = setInterval(() => {
 const contactUsBTN = document.querySelector("#input-box button");
 const tgicon = contactUsBTN.querySelector("img");
 
+// hovering
 contactUsBTN.addEventListener("mouseover", () => {
   tgicon.src = "tgicon_white.png";
+  contactUsBTN.classList.add("hovered")
 })
+// holding finger
+contactUsBTN.addEventListener("touchstart", () => {
+  tgicon.src = "tgicon_white.png";
+  contactUsBTN.classList.add("hovered")
+})
+
+// lifted finger
+contactUsBTN.addEventListener("touchend", () => {
+  tgicon.src = "tgicon_black.png";
+  contactUsBTN.classList.remove("hovered")
+})
+// left button
 contactUsBTN.addEventListener("mouseleave", () => {
   tgicon.src = "tgicon_black.png";
+  contactUsBTN.classList.remove("hovered")
 })
