@@ -4,7 +4,7 @@
 body {
   touch-action: none;
   background-size: cover;
-  background-image: url('image.jpg');
+  background-image: url("../image.jpg");
   background-position: center;
   background-repeat: no-repeat;
   margin: 0;
