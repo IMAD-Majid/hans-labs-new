@@ -18,21 +18,7 @@ body {
   overflow: hidden;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-}
-
-.flower {
-  position: absolute;
-  width: 30px; /* Adjust the size of the flower */
-  height: auto;
-  pointer-events: none;
-  animation: flowerFall 2s linear forwards;
-}
-
-@keyframes flowerFall {
-  to {
-    transform: translate(calc(var(--translateX, 0) * 1px), 100vh) rotate(720deg);
-    opacity: 0;
-  }
+  user-select: none;
 }
 
 #container {
@@ -48,6 +34,21 @@ body {
   left: 0;
   overflow: hidden;
   pointer-events: none;
+}
+
+.flower {
+  position: absolute;
+  width: 30px; /* Adjust the size of the flower */
+  height: auto;
+  pointer-events: none;
+  animation: flowerFall 2s linear forwards;
+}
+
+@keyframes flowerFall {
+  to {
+    transform: translate(calc(var(--translateX, 0) * 1px), 100vh) rotate(720deg);
+    opacity: 0;
+  }
 }
 
 #container .image {
@@ -75,8 +76,9 @@ body {
   color: #000;
   max-width: 550px;
   text-align: center;
-   margin-left: 40px;
+  margin-left: 40px;
   margin-right: 40px; 
+  margin: 0;
   font-family: "Cardo";
 }
 #container #time-content {
