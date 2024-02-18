@@ -2,24 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap");
 
-.cardo-regular {
-  font-family: "Cardo", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.cardo-bold {
-  font-family: "Cardo", serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.cardo-regular-italic {
-  font-family: "Cardo", serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
 body {
   background-size:cover;
   background-image: url("../image.jpg");
@@ -61,12 +43,15 @@ body, html {
   z-index: -1;
 }
 
+#container {
+  margin-top: -20px; 
+}
+
 #container header {
   font-size: 40px;
   color: #000;
   font-weight: 600;
   text-align: center;
-  margin-top: -0.5em;
   font-family: "Poppins";
 }
 
@@ -74,10 +59,10 @@ body, html {
   font-size: 16px;
   font-weight: 400;
   color: #000;
-  max-width: 500px;
+  max-width: 550px;
   text-align: center;
+  margin: 20px auto;
 }
-
 #container #time-content {
   display: flex;
   column-gap: 30px;
