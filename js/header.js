@@ -1,16 +1,15 @@
 function headerContent(currentPage) {
     const inIndex = location.href.includes("index") || location.href[location.href.length-1] == '/';
     document.querySelector("header").innerHTML = `
-        <h1>Han's Labs</h1>
+        <h1>
+            <a href="${inIndex ? '' : "../"}index.html">
+                Han's Labs
+            </a>
+        </h1>
         <input type="checkbox" id="active">
         <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
         <div class="wrapper">
             <ul>
-                <li><a
-                    href="${inIndex ? '' : "../"}index.html"
-                    class="${currentPage == "Home" ? "current" : ''}">
-                    Home
-                </a></li>
                 <li><a
                     href="${inIndex ? "p/" : ''}projects.html"
                     class="${currentPage == "Projects" ? "current" : ''}">
