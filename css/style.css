@@ -114,6 +114,7 @@ body, html {
   border: none;
   border: 1px solid #fff;
   border-radius: 1em;
+  font-family: "Poppins", sans-serif;
   background-color: rgba(255, 255, 255, 55);
   font-size: 100%;
   font-weight: 500;
@@ -132,8 +133,12 @@ body, html {
 
 #input-box button.hovered {
   background-color: #8b795e;
-  border: #f5f5dc;
   color: #fff;
+}
+
+#input-box button:focus {
+  outline: none;
+  border-color: #F5F5DC;
 }
 
 @media screen and (max-width: 300px) {
