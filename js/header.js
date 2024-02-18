@@ -1,5 +1,5 @@
 function headerContent(currentPage) {
-    const inIndex = location.href.includes("index") || location.href[location.href.length-1] == '/';
+    const inIndex = location.href.includes("index") || location.href[location.href.length - 1] == '/';
     document.querySelector("header").innerHTML = `
         <h1>
             <a href="${inIndex ? '' : "../"}index.html">
