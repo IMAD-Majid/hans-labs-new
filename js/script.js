@@ -80,26 +80,32 @@ contactUsBTN.addEventListener("mouseleave", () => {
 })
 
 document.addEventListener('DOMContentLoaded', function () {
-  const flowerContainer = document.getElementById('flower-container');
+  function createFlower() {
+    const flowerImages = ["flower1.png", "flower3.png", "flower5.png"];
+    const randomImage = flowerImages[Math.floor(Math.random() * flowerImages.length)];
 
-  document.addEventListener('touchstart', function (e) {
-    const flower = document.createElement('img');
-    flower.src = Math.random() > 0.5 ? 'flower1.png' : 'flower3.png';
-    flower.classList.add('flower');
+    const flower = document.createElement('div');
+    flower.className = 'flower';
+    flower.style.backgroundImage = `url(${randomImage})`;
+    document.getElementById('flower-container').appendChild(flower);
 
-    const x = e.touches[0].clientX;
-    const y = e.touches[0].clientY;
-
-    const randomTranslateX = (Math.random() - 0.5) * 2; 
+    // Set a random horizontal translation value
+    const randomTranslateX = Math.random() * 200 - 100; // Adjust the range as needed
     flower.style.setProperty('--translateX', randomTranslateX);
 
-    flower.style.left = `${x}px`;
-    flower.style.top = `${y}px`;
+    // Set a random animation duration
+    const randomDuration = Math.random() * 2 + 1; // Adjust the range as needed
+    flower.style.animationDuration = `${randomDuration}s`;
 
-    flowerContainer.appendChild(flower);
-
-    setTimeout(() => {
+    // Remove the flower after the animation completes
+    flower.addEventListener('animationend', function () {
       flower.remove();
-    }, 2000); // Remove the flower after 2 seconds
+    });
+  }
+
+  document.addEventListener('touchstart', function () {
+    createFlower();
   });
+
+  setInterval(createFlower, 500);
 });
