@@ -2,6 +2,9 @@ const translationRange = 200;
 const flowerW = 30; // flower width in pixels
 
 document.addEventListener('DOMContentLoaded', function () {
+    document.body.innerHTML += "<div id='flowers-container'></div>";
+    const flowersContainer = document.getElementById("flowers-container");
+    
     function createFlower(startX) {
         const flowerImages = ["flower1.png", "flower3.png", "flower5.png"];
         const randomImage = flowerImages[Math.floor(Math.random() * flowerImages.length)];
@@ -24,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
             flower.remove();
         });
 
-        document.body.appendChild(flower);
+        flowersContainer.appendChild(flower);
     }
 
     document.addEventListener('click', function (event) {
