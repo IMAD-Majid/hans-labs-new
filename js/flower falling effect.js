@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const flower = document.createElement('div');
         flower.className = 'flower';
         flower.style.left = startX + "px";
-        flower.style.backgroundImage = `url('${location.href.includes("index") ? '' : "../"}assets/${randomImage}')`;
+        flower.style.backgroundImage = `url('${location.href.includes("index") || location.href[location.href.length-1] == '/' ? '' : "../"}assets/${randomImage}')`;
 
         // Set a random horizontal translation value
         const randomTranslateX = Math.random() * 2 * translationRange - translationRange; // Adjust the range as needed

@@ -1,5 +1,5 @@
 function headerContent(currentPage) {
-    const inIndex = location.href.includes("index");
+    const inIndex = location.href.includes("index") || location.href[location.href.length-1] == '/';
     document.querySelector("header").innerHTML = `
         <h1>Han's Labs</h1>
         <input type="checkbox" id="active">
