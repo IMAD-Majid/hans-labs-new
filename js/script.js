@@ -14,30 +14,29 @@ if (diff <= 0) {
   days.textContent    = '00';
 } else {
   // setting values of the countdown based on the difference
-  let secValue = Math.floor((diff / 1000) % 60),
-    minValue = Math.floor(((diff / 1000) / 60) % 60),
-    hourValue = Math.floor(((diff / 1000) / 60 / 60) % 60),
-    dayValue = Math.floor(((diff / 1000) / 60 / 60) / 24);
+  let secValue = Math.floor(diff / 1000) % 60,
+    minValue = Math.floor(diff / 1000 / 60) % 60,
+    hourValue = Math.floor(diff / 1000 / 60 / 60) % 24,
+    dayValue = Math.floor(diff / 1000 / 60 / 60 / 24);
 
-  const timeFunction = setInterval(() => {
-    secValue--;
-
+const timeFunction = setInterval(() => {
     if (secValue === 0) {
-      minValue--;
       secValue = 60;
+      if (minValue === 0) {
+        minValue = 60;
+        if (hourValue === 0) {
+          hourValue = 24;
+          if (dayValue === 0) {
+            clearInterval(timeFunction);
+          }
+          dayValue--;
+        }
+        hourValue--;
+      }
+      minValue--;
     }
-    if (minValue === 0) {
-      hourValue--;
-      minValue = 60;
-    }
-    if (hourValue === 0) {
-      dayValue--;
-      hourValue = 24;
-    }
-
-    if (dayValue === 0) {
-      clearInterval(timeFunction);
-    }
+    secValue--;
+  
     seconds.textContent = secValue < 10 ? `0${secValue}` : secValue;
     minutes.textContent = minValue < 10 ? `0${minValue}` : minValue;
     hours.textContent = hourValue < 10 ? `0${hourValue}` : hourValue;
