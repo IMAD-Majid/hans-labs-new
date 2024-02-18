@@ -9,6 +9,9 @@ body {
   background-repeat: no-repeat;
   touch-action: none;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body, html {
@@ -16,12 +19,6 @@ body, html {
   overscroll-behavior-x: none;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Cardo", sans-serif;
-}
 
 #container {
   display: flex;
@@ -52,7 +49,6 @@ body, html {
   color: #000;
   font-weight: 600;
   text-align: center;
-  font-family: "Poppins";
 }
 
 #container p {
@@ -61,13 +57,13 @@ body, html {
   color: #000;
   max-width: 550px;
   text-align: center;
-  margin: 20px auto;
+  margin: 50px;
+  font-family: "Cardo";
 }
 #container #time-content {
   display: flex;
   column-gap: 30px;
   align-items: center;
-  font-family: "Poppins";
 }
 
 #time-content .time {
@@ -93,8 +89,8 @@ body, html {
 
 #contact-us {
   text-align: center;
-  margin-top: 50px;
-  /* Adjust margin as needed */
+  margin-top: 30px;
+  font-family: "Cardo";
 }
 
 #input-box {
@@ -109,7 +105,6 @@ body, html {
 }
 #input-box a {
   text-decoration: none;
-  font-family: "Poppins";
 }
 
 #input-box button {
@@ -132,12 +127,11 @@ body, html {
 #input-box button img {
   margin-left: 10px;
   width: 20px;
-  /* Adjust the size of the Telegram icon as needed */
 }
 
 #input-box button.hovered {
   background-color: #8b795e;
-  border: #f5f5dc
+  border: #f5f5dc;
   color: #fff;
 }
 
