@@ -11,6 +11,11 @@ body {
   padding-bottom: 2em;
 }
 
+body, html {
+  overscroll-behavior-y: contain;
+  overscroll-behavior-x: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -41,6 +46,7 @@ body {
   color: #000;
   max-width: 550px;
   text-align: center;
+  font-family: cardo;
 }
 
 #container #time-content {
@@ -87,7 +93,6 @@ body {
   column-gap: 20px;
 }
 #input-box a {
-  /* Removes the underline of links */
   text-decoration: none;
 }
 
@@ -97,7 +102,7 @@ body {
   border: none;
   border: 1px solid #fff;
   border-radius: 4px;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 100);
   font-size: 100%;
   font-weight: 500;
   display: flex;
@@ -116,7 +121,7 @@ body {
 
 #input-box button.hovered {
   background-color: #000;
-  color: white;
+  color: #fff;
 }
 
 @media screen and (max-width: 300px) {
