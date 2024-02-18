@@ -2,14 +2,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 body {
-  touch-action: none;
   background-size:auto;
   background-image: url("../image.jpg");
   background-position: center;
   background-repeat: no-repeat;
   margin: 0;
   padding: 0 0.5em;
-  padding-bottom: 8em;
+  padding-bottom: 2em;
 }
 
 * {
