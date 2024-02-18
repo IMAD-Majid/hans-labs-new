@@ -66,8 +66,8 @@ header h1 {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   background: linear-gradient(-135deg, #FFEEE5, #EFD5B2);
   clip-path: circle(25px at calc(100% - 45px) 45px);
   transition: all 0.3s ease-in-out;
