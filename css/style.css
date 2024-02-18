@@ -25,6 +25,7 @@ body {
   background-image: url("../image.jpg");
   background-position: center;
   background-repeat: no-repeat;
+  touch-action: none;
   margin: 0;
 }
 
@@ -61,11 +62,11 @@ body, html {
 }
 
 #container header {
-  font-size: 50px;
+  font-size: 40px;
   color: #000;
   font-weight: 600;
   text-align: center;
-  margin-top: 0.25em;
+  margin-top: -0.5em;
   font-family: "Poppins";
 }
 
@@ -81,6 +82,7 @@ body, html {
   display: flex;
   column-gap: 30px;
   align-items: center;
+  font-family: "Poppins";
 }
 
 #time-content .time {
@@ -122,6 +124,7 @@ body, html {
 }
 #input-box a {
   text-decoration: none;
+  font-family: "Poppins";
 }
 
 #input-box button {
@@ -129,7 +132,7 @@ body, html {
   outline: none;
   border: none;
   border: 1px solid #fff;
-  border-radius: 8px;
+  border-radius: 1em;
   background-color: rgba(255, 255, 255, 55);
   font-size: 100%;
   font-weight: 500;
@@ -138,7 +141,7 @@ body, html {
   padding: 1em 2em;
   color: #000;
   cursor: pointer;
-  transition: all 0.1s ease;
+  transition: all 0.05s ease;
 }
 
 #input-box button img {
@@ -148,7 +151,8 @@ body, html {
 }
 
 #input-box button.hovered {
-  background-color: #000;
+  background-color: #8b795e;
+  border: #f5f5dc
   color: #fff;
 }
 
