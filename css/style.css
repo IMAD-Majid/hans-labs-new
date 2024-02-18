@@ -57,7 +57,8 @@ body, html {
   color: #000;
   max-width: 550px;
   text-align: center;
-  margin: 50px;
+   margin-left: 40px;
+  margin-right: 40px; 
   font-family: "Cardo";
 }
 #container #time-content {
