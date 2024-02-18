@@ -12,11 +12,6 @@ body {
   padding-bottom: 8em;
 }
 
-body, html {
-  overscroll-behavior-y: contain;
-  overscroll-behavior-x: none;
-}
-
 * {
   margin: 0;
   padding: 0;
