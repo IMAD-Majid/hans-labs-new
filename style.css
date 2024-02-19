@@ -4,8 +4,10 @@
 
 body,
 html {
-  overscroll-behavior-y: contain;
-  overscroll-behavior-x: none;
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+  touch-action: none;
 }
 
 body {
@@ -13,13 +15,9 @@ body {
   background-image: url("../image.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  touch-action: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   user-select: none;
+  height: 100vh; /* Ensure the body covers the entire viewport height */
 }
 
 /* flower fall */
@@ -40,12 +38,13 @@ body {
   }
 }
 
+
 /* header */
 header {
   background-color: rgba(0, 0, 0, 0);
-  padding: 10px;
+  padding: 4px;
   color: black;
-  text-align: center;
+  text-align: left;
   position: relative;
 }
 
@@ -59,6 +58,7 @@ header h1 {
   right: 20px;
   font-size: 24px;
   cursor: pointer;
+  z-index: 2; /* Ensure it's above the overlay */
 }
 
 .sidenav {
@@ -76,6 +76,23 @@ header h1 {
   text-align: left;
 }
 
+.sidenav.overlay {
+  width: 100%;
+}
+
+.sidenav.overlay a {
+  display: block;
+  
+#overlayToggleButton {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 1);
+  z-index: 2; 
+  display: none;
+                   
 .sidenav a {
   padding: 15px 20px;
   text-decoration: none;
@@ -104,7 +121,7 @@ header h1 {
 }
 
 .navigation li {
-  margin: 15px 0;
+  margin: 10px 0; /* Reduce the margin between list items */
 }
 
 .navigation a {
@@ -113,12 +130,18 @@ header h1 {
   font-weight: bold;
 }
 
+.navigation a.current {
+  color: darkgrey; 
+  font-family: "Cardo";
+  font-style: italic; 
+}
+
 .social-links {
   position: absolute;
-  bottom: 0;
-  text-align: right;
+  bottom: 10px;
+  right: 20px; /* Adjust as needed */
   font-size: 20px;
-  width: 100%;
+  width: auto; /* Adjust as needed */
   padding: 10px;
   background-color: #EFD5B2;
   color: white;
@@ -130,7 +153,6 @@ header h1 {
   color: white;
   text-decoration: none;
 }
-
 /* responsiveness */
 @media screen and (max-width: 300px) {
   #container header {
