@@ -48,16 +48,14 @@ body {
 /* header */
 header {
   background: linear-gradient(to bottom, #EFD5B2, transparent);
-  padding: 10px;
+  padding: 20px;
   color: black;
   text-align: center;
   position: relative;
   display: flex;
-  justify-content: space-between; 
 }
 
 header h1 {
-  margin: 0;
   left: 20px; 
   top: 20px;
 }
@@ -83,8 +81,8 @@ header h1 {
   right: 20px;
   /* left: 20px; */
   top: 20px;
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
   text-align: center;
   line-height: 50px;
   border-radius: 50%;
