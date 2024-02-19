@@ -41,11 +41,13 @@ body {
 
 /* header */
 header {
-  background-color: rgba(0, 0, 0, 0);
-  padding: 4px;
+  background: linear-gradient(to bottom, #EFD5B2, transparent);
+  padding: 10px;
   color: black;
-  text-align: left;
+  text-align: center;
   position: relative;
+  display: flex; /* Use flexbox */
+  justify-content: space-between; /* Align children at start and end of container */
 }
 
 header h1 {
@@ -53,12 +55,9 @@ header h1 {
 }
 
 #toggleButton {
-  position: absolute;
-  top: 20px;
-  right: 20px;
   font-size: 24px;
   cursor: pointer;
-  z-index: 2; /* Ensure it's above the overlay */
+  z-index: 2;
 }
 
 .sidenav {
