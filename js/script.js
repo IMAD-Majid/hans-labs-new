@@ -31,7 +31,7 @@ if (diff <= 0) {
         minValue = 60;
         if (hourValue === 0) {
           hourValue = 24;
-          
+
           dayValue--;
         }
         hourValue--;
@@ -44,7 +44,7 @@ if (diff <= 0) {
   updateCountdown()
 
   // updatting the countdown every second
-  const timeFunction = setInterval(()=>{
+  const timeFunction = setInterval(() => {
     updateCountdown()
     // stoping the countdown update
     if (secValue === 0 && minValue === 0 && hourValue === 0 && dayValue === 0) {
@@ -80,17 +80,18 @@ contactUsBTN.addEventListener("mouseleave", () => {
 })
 
 document.addEventListener('DOMContentLoaded', function () {
-  function createFlower() {
+  function createFlower(startX) {
     const flowerImages = ["flower1.png", "flower3.png", "flower5.png"];
     const randomImage = flowerImages[Math.floor(Math.random() * flowerImages.length)];
 
     const flower = document.createElement('div');
     flower.className = 'flower';
-    flower.style.backgroundImage = `url(${randomImage})`;
-    document.getElementById('flower-container').appendChild(flower);
+    flower.style.left = startX + "px";
+    flower.style.backgroundImage = `url('${randomImage}')`;
 
     // Set a random horizontal translation value
-    const randomTranslateX = Math.random() * 200 - 100; // Adjust the range as needed
+    const translationRange = 200
+    const randomTranslateX = Math.random() * 2 * translationRange - translationRange; // Adjust the range as needed
     flower.style.setProperty('--translateX', randomTranslateX);
 
     // Set a random animation duration
@@ -101,11 +102,16 @@ document.addEventListener('DOMContentLoaded', function () {
     flower.addEventListener('animationend', function () {
       flower.remove();
     });
+
+    document.body.appendChild(flower);
   }
 
-  document.addEventListener('touchstart', function () {
-    createFlower();
+  document.addEventListener('click', function (event) {
+    for (let f=0; f<=Math.random()*10; f++){
+      createFlower(event.clientX);
+    }
   });
-
-  setInterval(createFlower, 500);
+  setInterval(()=>{
+    createFlower(Math.random()*window.innerWidth);
+  }, 500)
 });
