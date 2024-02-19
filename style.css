@@ -23,7 +23,7 @@ body {
   background-repeat: no-repeat;
   font-family: "Poppins", sans-serif;
   user-select: none;
-  height: 100vh; /* Ensure the body covers the entire viewport height */
+  height: 100vh; 
 }
 
 /* flower fall */
@@ -52,8 +52,8 @@ header {
   color: black;
   text-align: center;
   position: relative;
-  display: flex; /* Use flexbox */
-  justify-content: space-between; /* Align children at start and end of container */
+  display: flex;
+  justify-content: space-between; 
 }
 
 header h1 {
@@ -63,7 +63,7 @@ header h1 {
 .wrapper{
   position: fixed;
   top: 0;
-  left: -100%;
+  left: 0;
   height: 100%;
   width: 100%;
   background: linear-gradient(-135deg, #FFEEE5, #EFD5B2);
@@ -72,9 +72,7 @@ header h1 {
 }
 
 #active:checked ~ .wrapper{
-  
-  left: 0; /* Slide in from the left */
-  opacity: 1; /* Make it fully visible */
+  clip-path: circle(75%);
 }
 
 .menu-btn{
@@ -91,7 +89,7 @@ header h1 {
   font-size: 20px;
   color: #fff;
   cursor: pointer;
-  background: linear-gradient(-135deg, #FFEEE5, #EFD5B2);
+  background: linear-gradient(-135deg, #8B735B, #000);
   transition: all 0.3s ease-in-out;
 }
 
@@ -157,9 +155,9 @@ input[type="checkbox"]{
 .social-links {
   position: absolute;
   bottom: 10px;
-  right: 20px; /* Adjust as needed */
+  right: 20px; 
   font-size: 20px;
-  width: auto; /* Adjust as needed */
+  width: auto; 
   padding: 10px;
   background-color: transperant;
   color: white;
@@ -168,7 +166,7 @@ input[type="checkbox"]{
 
 .social-icon {
   margin: 0 10px;
-  color: white;
+  color: darkgrey;
   text-decoration: none;
 }
 /* responsiveness */
