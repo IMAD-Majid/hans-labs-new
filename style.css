@@ -58,6 +58,8 @@ header {
 
 header h1 {
   margin: 0;
+  left: 20px; 
+  top: 20px;
 }
 
 .wrapper{
@@ -81,8 +83,8 @@ header h1 {
   right: 20px;
   /* left: 20px; */
   top: 20px;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   text-align: center;
   line-height: 50px;
   border-radius: 50%;
@@ -94,8 +96,8 @@ header h1 {
 }
 
 #active:checked ~ .menu-btn{
-  background: #fff;
-  color: #FFDBBF;
+  background: linear-gradient(-135deg, #8B735B, #000);
+  color: #fff;
 }
 
 #active:checked ~ .menu-btn i:before{
@@ -108,7 +110,7 @@ header h1 {
   left: 50%;
   transform: translate(-50%, -50%);
   list-style: none;
-  text-align: center;
+  text-align: left;
 }
 
 .wrapper ul li{
@@ -121,7 +123,7 @@ header h1 {
   font-size: 30px;
   font-weight: 500;
   padding: 5px 30px;
-  color: #fff;
+  color: #000;
   position: relative;
   line-height: 50px;
   transition: all 0.3s ease;
