@@ -116,19 +116,3 @@ document.addEventListener('DOMContentLoaded', function () {
   }, 500)
 });
 
-function toggleNavMenu() {
-  var sideNav = document.getElementById('sideNav');
-  if (sideNav.style.width === '250px') {
-    closeNav();
-  } else {
-    openNav();
-  }
-}
-
-function openNav() {
-  document.getElementById('sideNav').style.width = '250px';
-}
-
-function closeNav() {
-  document.getElementById('sideNav').style.width = '0';
-}
