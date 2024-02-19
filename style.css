@@ -152,6 +152,11 @@ input[type="checkbox"]{
   display: none;
 }
 
+.current {
+  font-style: italic;
+  color: darkgrey;
+    }
+
 .social-links {
   position: absolute;
   bottom: 10px;
