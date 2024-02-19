@@ -115,3 +115,20 @@ document.addEventListener('DOMContentLoaded', function () {
     createFlower(Math.random()*window.innerWidth);
   }, 500)
 });
+
+function toggleNavMenu() {
+  var sideNav = document.getElementById('sideNav');
+  if (sideNav.style.width === '250px') {
+    closeNav();
+  } else {
+    openNav();
+  }
+}
+
+function openNav() {
+  document.getElementById('sideNav').style.width = '250px';
+}
+
+function closeNav() {
+  document.getElementById('sideNav').style.width = '0';
+}
