@@ -1,10 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const overlay = document.getElementById('overlay');
+  const sideNav = document.getElementById('sideNav');
+  const toggleButton = document.getElementById('toggleButton');
   const pageTitle = document.getElementById('pageTitle');
-  const toggleOverlayButton = document.getElementById('toggleOverlayButton');
+  const overlay = document.getElementById('overlay');
 
   // Function to toggle overlay visibility
   function toggleOverlay() {
+    sideNav.style.width = (sideNav.style.width === '250px') ? '0' : '250px';
     overlay.style.display = (overlay.style.display === 'block') ? 'none' : 'block';
   }
 
@@ -15,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Add event listener for the toggle button
-  toggleOverlayButton.addEventListener('click', function () {
+  toggleButton.addEventListener('click', function () {
     toggleOverlay();
   });
 
